@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Three from "./PathfindingVisualizer/Three";
+import Home from "./PathfindingVisualizer/Home";
 // import PathfindingVisualizer from './PathfindingVisualizer/PathfindingVisualizer';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -9,7 +9,7 @@ function App() {
     <Router>
       <>
       <Switch>
-        <Route exact path="/" component={Three} />
+        <Route exact path="/" component={Home} />
         {/* <Route exact path="/path" component={PathfindingVisualizer} /> */}
       </Switch>
       </>

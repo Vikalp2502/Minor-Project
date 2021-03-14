@@ -24,7 +24,7 @@ const Box = ({position, args, color, speed}) => {
 
 export default function App(){
     return (
-        <Canvas shadowMap colorManagement camera={{position: [-5,2,10], fov: 50}}>
+        <Canvas shadowMap colorManagement camera={{position: [-5,2,10], fov: 40}}>
           <ambientLight intensity={0.3}/>
           <directionalLight 
             castShadow
@@ -47,9 +47,9 @@ export default function App(){
               <shadowMaterial attach="material" opacity={0.3}/>
             </mesh>
 
-            <Box position={[0,1,0]} args={[3,2,1]} color="turquoise" speed={1}/>
-            <Box position={[-2,1,-5]} color="pink" speed={6}/>
-            <Box position={[5,1,-2]} color="pink" speed={6} />
+            <Box position={[0,0,0]} args={[3,2,1]} color="turquoise" speed={1}/>
+            <Box position={[-2,0,-5]} color="pink" speed={6}/>
+            <Box position={[5,0,-2]} color="pink" speed={6} />
           </group>
 
           <OrbitControls />

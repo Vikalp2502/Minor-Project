@@ -7,3 +7,43 @@ html, body, #root{
     margin: 0;
     padding: 0;
 }
+Canvas{
+    height: 100vh;
+}
+.title{
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 30px auto;
+    color: #2d3958;
+    font-size: 50px;
+    font-family: 'Lato';
+    font-weight: 500;
+}
+.button {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    border: none;
+    font-family: 'Lato';
+    padding: 15px 40px;
+    border-radius: 8px;
+    background-color: #4549ff;
+    box-shadow: -5px 30px 20px -20px rgba(86,93,113,.38);
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all ease-in 0.3s;
+}
+.button:focus{
+    outline: none;
+}
+.button:hover{
+    transform: translateY(-5px);
+    background-color: #562af0;
+}
