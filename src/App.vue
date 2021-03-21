@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <PathfindingVisualizer />
+    <Visualizer />
   </div>
 </template>
 
 <script>
-import PathfindingVisualizer from './components/index.vue'
+import Visualizer from './PathfindingVisualizer/index.vue'
 
 export default {
   name: 'App',
