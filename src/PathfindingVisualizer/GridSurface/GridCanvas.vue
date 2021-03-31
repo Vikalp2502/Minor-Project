@@ -32,7 +32,7 @@ import { PointerLockControls } from "three/examples/jsm/controls/PointerLockCont
 import TWEEN, { removeAll } from "@tweenjs/tween.js";
 import Stats from "three/examples/jsm/libs/stats.module.js";
 
-import { getAllNodes, tweenToColor } from "./algorithms/helpers.js";
+import { getAllNodes, tweenToColor } from "../Functions/Nodes";
 
 export default {
 	props: [

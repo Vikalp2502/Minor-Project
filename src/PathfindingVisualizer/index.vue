@@ -30,38 +30,19 @@
 		    <span class="lg span">Settings</span>
 			<img class="icons" src="@/assets/icons/street-view.svg" alt="" />
 		</button>
-		<transition-group name="slide" mode="out-in" tag="div" class="header py-1" v-if="settings">
-			<select
-				id="algorithms"
-				v-model="selectedAlgorithm"
-				:disabled="visualizerState == 'running'"
-				key="algo-select"
-				v-if="!worldSetup"
-			>
-				<option :value="algo" v-for="algo in algorithms" :key="algo.algorithm">{{
-					algo.displayName
-				}}</option>
-			</select>
-			<Button
-				class="accent"
-				@click="visualizeAlgorithm()"
-				:disabled="visualizerState == 'running' || worldSetup"
-				key="visualize"
-				v-if="!worldSetup"
-			>
-				<img class="fallback-icon" src="@/assets/icons/path.svg" alt="" />
-				<span class="lg">Visualize!</span>
-			</Button>
-			<Button class="danger" @click="clearPath" key="clear-path" :disabled="visualizerState == 'running'">
-				<img class="fallback-icon" src="@/assets/icons/cross.svg" alt="" />
-				<span class="lg">Clear path</span>
-				<span class="sm">path</span>
-			</Button>
-			<Button class="danger" @click="clearWalls" key="clear-walls" :disabled="visualizerState == 'running'">
-				<img class="fallback-icon" src="@/assets/icons/cross.svg" alt="" />
-				<span class="lg">Clear walls</span>
-				<span class="sm">walls</span>
-			</Button>
+		<div class="header" v-if="settings">
+			<div class="clear-btn">
+				<Button class="danger" @click="clearPath" key="clear-path" :disabled="visualizerState == 'running'">
+					<img class="fallback-icon" src="@/assets/icons/cross.svg" alt="" />
+					<span class="lg">Clear path</span>
+					<span class="sm">path</span>
+				</Button>
+				<Button class="danger" @click="clearWalls" key="clear-walls" :disabled="visualizerState == 'running'">
+					<img class="fallback-icon" src="@/assets/icons/cross.svg" alt="" />
+					<span class="lg">Clear walls</span>
+					<span class="sm">walls</span>
+				</Button>
+			</div>
 			<div class="maze-dropdown" key="maze-select">
 				<Button class="info btn-maze" @click="onMazeDropdownClick">
 					<img class="fallback-icon" src="@/assets/icons/maze.svg" alt="" />
@@ -80,6 +61,19 @@
 			</div>
 			<select
 				id="algorithms"
+				class="drop"
+				v-model="selectedAlgorithm"
+				:disabled="visualizerState == 'running'"
+				key="algo-select"
+				v-if="!worldSetup"
+			>
+				<option :value="algo" v-for="algo in algorithms" :key="algo.algorithm">{{
+					algo.displayName
+				}}</option>
+			</select>
+			<select
+				id="algorithms"
+				class="drop"
 				v-model="selectedSpeed"
 				:disabled="visualizerState == 'running'"
 				key="speed-select"
@@ -87,7 +81,17 @@
 			>
 				<option :value="speed" v-for="speed in speeds" :key="speed.text">{{ speed.text }}</option>
 			</select>
-		</transition-group>
+			<Button
+				class="accent"
+				@click="visualizeAlgorithm()"
+				:disabled="visualizerState == 'running' || worldSetup"
+				key="visualize"
+				v-if="!worldSetup"
+			>
+				<img class="fallback-icon" src="@/assets/icons/path.svg" alt="" />
+				<span class="lg">Visualize!</span>
+			</Button>
+		</div>
 		<button
 			class="open btn-setup"
 			key="setup"
@@ -124,7 +128,7 @@
 
 <script>
 import Canvas from "./GridSurface/GridCanvas.vue";
-// import Info from '@/components/UI/Info.vue';
+import Info from './Extra/Info.vue';
 import TWEEN from "@tweenjs/tween.js";
 import '../App.css';
 
@@ -137,6 +141,7 @@ import { randomMaze, recursiveDivisionMaze } from "./Functions/mazeAlgorithms.js
 export default {
 	components: {
 		Canvas,
+		Info
 	},
 	data: () => ({
 		visualizerState: "clear",
@@ -229,8 +234,8 @@ export default {
 			height: 8,
 			width: 8,
 		},
-		rows: 35,
-		cols: 35,
+		rows: 32,
+		cols: 32,
 		grid: [],
 		ground: null,
 		controlType: "Orbit",
@@ -239,8 +244,8 @@ export default {
 			col: 6,
 		},
 		finish: {
-			row: 29,
-			col: 29,
+			row: 25,
+			col: 25,
 		},
 		visitedNodes: 0,
 		pathLength: 0,
@@ -446,6 +451,7 @@ export default {
 
 		visualizeAlgorithm() {
 			let timerDelay = this.selectedSpeed.value;
+			this.settings= false;
 			this.clearPath();
 			// this.moveCamera();
 			this.$nextTick(() => {

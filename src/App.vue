@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import Visualizer from './PathfindingVisualizer/index.vue'
+import Visualizer from './PathfindingVisualizer/index.vue';
 
 export default {
   name: 'App',
   components: {
-    PathfindingVisualizer
+    Visualizer
   }
 }
 </script>

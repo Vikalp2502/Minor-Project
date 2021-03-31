@@ -41,25 +41,43 @@
 
 .header {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    top: 90px;
+    right: 10px;
+    width: 20%;
     transition: all 500ms ease-out;
+    background: linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5);
+    border-radius: 8px;
     z-index: 1;
+    padding-bottom: 30px;
 }
-
-.header::before {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    box-shadow: 1px 10px 50px rgba(0, 0, 0, 1);
-    z-index: -1;
+.clear-btn{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.danger{
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #333333, #dd1818);
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    box-shadow: 0px 5px 7px 0 #dd181833;
+    cursor: pointer;
+}
+.danger:focus{
+    outline: none;
+}
+.drop{
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 10%;
+    box-shadow: 0px 5px 7px 0px #00000033;
 }
 
 select {
@@ -169,6 +187,24 @@ select {
 
 .maze-dropdown {
     position: relative;
+    width: 80%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-maze{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0px 5px 7px 0px #2c532c33;
+    background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
+    color: #fff;
+    cursor: pointer;
+}
+.btn-maze:focus{
+    outline: none;
 }
 
 .dropdown {
@@ -185,54 +221,48 @@ select {
     font-size: 0.8em;
     font-weight: 600;
     color: white;
-    background: #000;
+    background: linear-gradient(to left, #0F2027, #203A43, #2C5364);
     cursor: pointer;
 }
 .dropdown-item:hover {
     filter: brightness(0.9);
 }
 
-@media (max-width: 792px) {
-        .lg {
-            display: none;
-        }
-        .sm {
-            display: block;
-            font-size: 0.7em;
-        }
-        .hover:hover {
-            width: 55px;
-        }
-    .btn-camera {
-        top: 115px;
-    }
-    .btn-device-cam {
-        top: 170px;
-    }
-    .fallback-icon {
-        display: block;
-    }
-    .btn-controls {
-        display: none;
-    }
-        select {
-            padding: 2px;
-            font-size: 0.7em;
-        }
+.accent{
+    width: 80%;
+    padding: 15px;
+    margin: 20px 10% 0px;
+    border: none;
+    font-size: 17px;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0px 5px 7px 0px #2c532c33;
+    background: linear-gradient(to right, #8E2DE2, #4A00E0);
+    color: #fff;
+    cursor: pointer;
 }
-
-	.slide-enter-active,
-	.slide-leave-active {
-		transition: all 500ms ease-in-out;
-	}
-	.slide-leave-active {
-		position: absolute;
-	}
-	.slide-enter,
-	.slide-leave-to {
-		opacity: 0;
-		transform: translateY(-50%);
-	}
-	.slide-move {
-		transition: all 500ms ease-in-out;
-	}
+.accent:focus{
+    outline: none;
+}
+.info{
+    padding: 10px 20px;
+    border: none;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0px 5px 7px 0px #2c532c33;
+    background: linear-gradient(to right, #8E2DE2, #4A00E0);
+    color: #fff;
+    cursor: pointer;
+}
+.btn-tutorial{
+    padding: 10px 20px;
+    border: none;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0px 5px 7px 0px #2c532c33;
+    background: linear-gradient(to right, #8E2DE2, #4A00E0);
+    color: #fff;
+    cursor: pointer;
+}
