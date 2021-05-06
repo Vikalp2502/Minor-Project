@@ -43,7 +43,7 @@ export default {
 				A pathfinding algorithm seeks to find the shortest path between two points.
 				<br><br> 
 				<div style="display:flex; flex-wrap: wrap; align-items: center; justify-content: center;">
-					<img src="img/tutorial/road.png" style="width: 120px; margin: 10px;">
+					<img src="img/tutorial/path.png" style="width: 120px; margin: 10px;">
 				</div><br>
 				All of the algorithms on this web-app are adapted for a 2D grid, where 90 degree turns have a cost of 1 and movements from a node to another have a cost of 1.`
 			},
@@ -53,38 +53,16 @@ export default {
 				<br> 
 				You can change the start/end positions and add walls easily by clicking and dragging.
 				<br>
-				<div style="display:flex; flex-wrap: wrap; align-items: center; justify-content: center;">
-					<img src="img/tutorial/setupWorld.jpg" style="width: 160px; margin: 10px;">
-					<img src="img/tutorial/setupWorld2.jpg" style="width: 150px; margin: 10px;">
-				</div>
-				<br>
-				<small>("They are quite clearly buildings, Dhruv" - I know but I'm used to the 'wall' terminology :p)</small>`
-			},
-			{
-				heading: "Capture using Device Camera",
-				text: `While setting up the world, click on the camera icon to get the feed from your device camera and create the grid. 
-				<br> 
-				<div style="display:flex; flex-wrap: wrap; align-items: center; justify-content: center;">
-					<img src="img/tutorial/deviceCamButton.jpg" style="width: 160px; margin: 10px;">
-					<img src="img/tutorial/deviceCamPreview.jpg" style="width: 80px; margin: 10px;">
-					<img src="img/tutorial/deviceCamGrid.jpg" style="width: 160px; margin: 10px;">
-				</div>
-				<br>
-				You can preview the feed in the bottom left corner and also set the brightness threshold level. Remember, dark pixels = walls.
-				<br><br>
-				<small>(Might affect performance)</small>`
+				
+				`
 			},
 			{
 				heading: "Select algorithm",
 				text: `Select an algorithm from the top-left dropdown and click the Visualize button to, you know, visualize it.
 				<br>
-				<div style="display:flex; flex-wrap: wrap; align-items: center; justify-content: center;">
-					<img src="img/tutorial/selectAlgo.jpg" style="width: 250px; margin: 10px;">
-				</div>
+				
 				You can change the speed from the right-most dropdown.
-				<div style="display:flex; flex-wrap: wrap; align-items: center; justify-content: center;">
-					<img src="img/tutorial/speed.jpg" style="width: 120px; margin: 10px;">
-				</div>
+				
 				`
 			},
 			{
@@ -113,10 +91,7 @@ export default {
 				heading: "Generate a maze",
 				text: `Feeling lazy to add walls yourself? Select an algorithm from the Maze Algorithms dropdown to generate a maze.
 				<br>
-				<div style="display:flex; flex-wrap: wrap; align-items: center; justify-content: center;">
-					<img src="img/tutorial/maze.jpg" style="width: 160px; margin: 10px;">
-					<img src="img/tutorial/maze2.jpg" style="width: 200px; margin: 10px;">
-				</div><br>
+				<br>
 				<small>Don't be lazy to click the Visualize button though.</small>`
 			},
 			{
@@ -125,10 +100,7 @@ export default {
 				<br><br>
 				Click the First-Person button to dive right into the world!
 				<br><br>
-				<div style="display:flex; flex-wrap: wrap; align-items: center; justify-content: center;">
-					<img src="img/tutorial/firstPerson.jpg" style="width: 150px; margin: 10px;">
-					<img src="img/tutorial/firstPerson2.jpg" style="width: 200px; margin: 10px;">
-				</div><br>
+				
 				<table class="camera-table">
 					<tr>
 						<td>W/A/S/D</td>
@@ -145,15 +117,6 @@ export default {
 				</table>
 				<br>
 				<small>Try it to know how Hulk feels while moving through the city.</small>`
-			},
-			{
-				heading: "Have fun!",
-				text: `Make sure to enjoy this as much as I did while building it. Practice your FPS skills too.
-				<br><br>
-				There's little Easter Egg hidden in the system too, let's see if you can find it. ;)
-				<br><br>
-				You can view the source code for this project on <a href="https://github.com/dhruvmisra/Pathfinding-Visualizer-ThreeJS" target="_blank">GitHub</a>
-				`
 			},
 		],
 		tutorialIndex: 0,

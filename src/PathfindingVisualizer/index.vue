@@ -28,9 +28,10 @@
 			@click="settings = !settings"
 		>   
 		    <span class="lg span">Settings</span>
-			<img class="icons" src="@/assets/icons/street-view.svg" alt="" />
+			<img class="icons" src="@/assets/icons/setting.png" alt="" />
 		</button>
-		<div class="header" v-if="settings">
+		<transition name="fade">
+		<div class="header blur" v-if="settings">
 			<div class="clear-btn">
 				<Button class="danger" @click="clearPath" key="clear-path" :disabled="visualizerState == 'running'">
 					<img class="fallback-icon" src="@/assets/icons/cross.svg" alt="" />
@@ -92,6 +93,7 @@
 				<span class="lg">Visualize!</span>
 			</Button>
 		</div>
+		</transition>
 		<button
 			class="open btn-setup"
 			key="setup"
@@ -107,8 +109,8 @@
 			v-if="!worldSetup"
 			@click="switchControl"
 		>
-			<img class="icons" src="@/assets/icons/street-view.svg" alt="" v-if="controlType == 'Orbit'" />
-			<img class="icons" src="@/assets/icons/perspective.svg" alt="" v-else />
+			<img class="icons" src="@/assets/icons/location.png" alt="" v-if="controlType == 'Orbit'" />
+			<img class="icons" src="@/assets/icons/view.png" alt="" v-else />
 			<span class="lg span">{{ controlType == "Orbit" ? "First-person" : "Top View" }}</span>
 		</button>
 		<div class="details">
