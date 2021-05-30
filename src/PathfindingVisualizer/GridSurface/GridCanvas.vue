@@ -334,7 +334,7 @@ export default {
 			}
 
 			// Ambient Light
-			this.ambientLight = new THREE.AmbientLight(0xfdfbd3, 1);
+			this.ambientLight = new THREE.AmbientLight(0xffffff, 1);
 			this.scene.add(this.ambientLight);
 
 			// LIGHTS
